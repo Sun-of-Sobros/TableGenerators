@@ -719,7 +719,7 @@ def main():
     WRAP_WIDTH_DEFAULT = 29
     POSIX_DAY_IN_SECONDS = 60 * 60 * 24
     MARKET_CYCLE_START_POSIX = 0 * POSIX_DAY_IN_SECONDS  # Days offset from epoch
-    POSTING_HOUR_DEFAULT = 13  # Market posting time
+    POSTING_HOUR_DEFAULT = 14  # Market posting time
     DAYS_IN_CYCLE_DEFAULT = 7  # merchant market cycle length
     DAYS_TO_ADD_DEFAULT = 7  # Number of days in the future for discord time code
     FILENAME_DEFAULT = 'Shop Sheet.txt'  # Must be UTF-8 text
