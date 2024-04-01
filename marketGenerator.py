@@ -4,7 +4,6 @@
 #  Lotsa Spaghetti
 
 
-from math import *
 from textwrap import wrap
 from time import *
 from random import *
