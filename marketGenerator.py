@@ -110,28 +110,28 @@ def getTattoo(max_rarity="Common", min_rarity=""):
     tattoo = {"name": "Tattoo Not Found", "price": "Not Found"}
 
     if len(min_rarity) == 0:
-    min_rarity = max_rarity
+        min_rarity = max_rarity
 
     if (min_rarity in RaritiesList) and (max_rarity in RaritiesList):
-    if min_rarity == max_rarity:
-        rarity = RaritiesList.index(max_rarity)
+        if min_rarity == max_rarity:
+            rarity = RaritiesList.index(max_rarity)
 
-    else:
-        if (RaritiesList.index(min_rarity) > RaritiesList.index(max_rarity)):
-        temp = min_rarity
-        min_rarity = max_rarity
-        max_rarity = temp
+        else:
+            if (RaritiesList.index(min_rarity) > RaritiesList.index(max_rarity)):
+                temp = min_rarity
+                min_rarity = max_rarity
+                max_rarity = temp
 
-        rarity = randint(RaritiesList.index(min_rarity), RaritiesList.index(max_rarity))
+            rarity = randint(RaritiesList.index(min_rarity), RaritiesList.index(max_rarity))
 
-    attempts = 0
-    searchComplete = False
-    while (not searchComplete) and (attempts < 100):
-        attempts = attempts + 1
-        randomTattoo = Tattoos[randint(0, len(Tattoos) - 1)]
-        if randomTattoo["rarity"] == RaritiesList[rarity]:
-        searchComplete = True
-        tattoo = randomTattoo
+        attempts = 0
+        searchComplete = False
+        while (not searchComplete) and (attempts < 100):
+            attempts = attempts + 1
+            randomTattoo = Tattoos[randint(0, len(Tattoos) - 1)]
+            if randomTattoo["rarity"] == RaritiesList[rarity]:
+                searchComplete = True
+                tattoo = randomTattoo
 
     return tattoo
 
@@ -149,22 +149,22 @@ def getTattooItems():
     tattooList.append(mergeMarker)
 
     for i in range(len(spellwroughtsSpellLevel) // 2):
-    lesserScrollLevel = i * 2
-    greaterScrollLevel = lesserScrollLevel + 1
-    tattooList.append(spellwroughtsSpellLevel[lesserScrollLevel])
-    tattooList.append(spellwroughtsSpellLevel[greaterScrollLevel])
+        lesserScrollLevel = i * 2
+        greaterScrollLevel = lesserScrollLevel + 1
+        tattooList.append(spellwroughtsSpellLevel[lesserScrollLevel])
+        tattooList.append(spellwroughtsSpellLevel[greaterScrollLevel])
 
-    tattooList.append(sameLineMarker)
-    tattooList.append(sameLineMarker)
+        tattooList.append(sameLineMarker)
+        tattooList.append(sameLineMarker)
 
-    tattooList.append(spellwroughtsPrice[lesserScrollLevel])
-    tattooList.append(spellwroughtsPrice[greaterScrollLevel])
+        tattooList.append(spellwroughtsPrice[lesserScrollLevel])
+        tattooList.append(spellwroughtsPrice[greaterScrollLevel])
 
-    weakerScrolls = getScrolls(1, lesserScrollLevel)
-    strongerScrolls = getScrolls(1, greaterScrollLevel)
+        weakerScrolls = getScrolls(1, lesserScrollLevel)
+        strongerScrolls = getScrolls(1, greaterScrollLevel)
 
-    tattooList.append(weakerScrolls[0])
-    tattooList.append(strongerScrolls[0])
+        tattooList.append(weakerScrolls[0])
+        tattooList.append(strongerScrolls[0])
 
     tattooList.append(sectionMarker)
     tattooList.append(sectionMarker)
@@ -184,7 +184,6 @@ def getTattooItems():
 
 
 MANUAL_INPUT = getTattooItems()
-
 
 from textwrap import wrap
 from math import ceil
