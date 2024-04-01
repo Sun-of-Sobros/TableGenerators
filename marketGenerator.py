@@ -77,20 +77,20 @@ def getPoisons(requested_type, num_poisons=1):
 
     poisons = []
     for i in range(num_poisons):
-    attempts = 0
-    while True:
-        attempts = attempts + 1
+        attempts = 0
+        while True:
+            attempts = attempts + 1
 
-        randNum = randint(0, len(SpecialMaterials[typesOfPoisons]) - 1)
-        newScroll = [SpecialMaterials[typesOfPoisons][randNum][key_name], SpecialMaterials[typesOfPoisons][randNum][key_price]]
-        if newScroll not in poisons:
-        break
-        elif attempts > 100:
-        # TESTING STATEMENT
-        poisons.append(["Exceeded maximum attempts for this item", str(attempts)])
-        break
-    poisons.append(newScroll[0])
-    poisons.append(newScroll[1])
+            randNum = randint(0, len(SpecialMaterials[typesOfPoisons]) - 1)
+            newScroll = [SpecialMaterials[typesOfPoisons][randNum][key_name], SpecialMaterials[typesOfPoisons][randNum][key_price]]
+            if newScroll not in poisons:
+                break
+            elif attempts > 100:
+                # TESTING STATEMENT
+                poisons.append(["Exceeded maximum attempts for this item", str(attempts)])
+                break
+        poisons.append(newScroll[0])
+        poisons.append(newScroll[1])
 
     return poisons
 
