@@ -49,7 +49,7 @@ MasterList = [Potions, Poisons, AllSpells, Tattoos]
 
 def getScrolls(num_scrolls=1, max_level=1, min_level=-1):
     if min_level > max_level or min_level < 0:
-	min_level = max_level
+        min_level = max_level
 
     scrolls = []
     for i in range(num_scrolls):
