@@ -65,16 +65,6 @@ def getPoisons(requested_type, num_poisons=1):
     return poisons
 
 
-def getScrolls(num_scrolls=1, max_level=3, min_level=0):
-    scrolls = []
-    for _ in range(num_scrolls):
-        # Your logic to select a scroll based on its level
-        # This is a placeholder logic, replace it with your actual item selection logic
-        level = randint(min_level, max_level)
-        scroll = {"name": f"Scroll of Level {level}", "price": f"{50 * level} gp"}
-        scrolls.append(scroll)
-    return scrolls
-
 def getTattoo(max_rarity="Common", min_rarity=""):
     TableList = ["Tattoos"]
     RaritiesList = ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"]
@@ -130,9 +120,6 @@ def getTattooItems():
 
         tattooList.append(spellwroughtsPrice[lesserScrollLevel])
         tattooList.append(spellwroughtsPrice[greaterScrollLevel])
-
-        weakerScrolls = getScrolls(1, lesserScrollLevel)
-        strongerScrolls = getScrolls(1, greaterScrollLevel)
 
         tattooList.append(weakerScrolls[0])
         tattooList.append(strongerScrolls[0])
