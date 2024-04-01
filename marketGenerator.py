@@ -1,12 +1,15 @@
-
+	#  December 20 2022 Update
+	#  https://github.com/ItsQc/Ravenloft-Tables
+	#  If you have issue with this, ping Quincy on Discord
+	#  Lotsa Spaghetti
+	
+	
 	from math import *
 	from textwrap import wrap
 	from time import *
 	from random import *
 	from secrets import *
 	from time import *
-
-
 
 	seed(time_ns() * random() + thread_time_ns() * int(token_hex(), 16) * process_time_ns() + int(token_hex(), 16))
 	seedList = sample(range(randint(9001, int(1000000 * (100 * random())))), 9000)
