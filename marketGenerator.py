@@ -50,26 +50,23 @@ MasterList = [Potions, Poisons, AllSpells, Tattoos]
 def getScrolls(num_scrolls=1, max_level=1, min_level=-1):
     if min_level > max_level or min_level < 0:
         min_level = max_level
-
     scrolls = []
     for i in range(num_scrolls):
-	attempts = 0
-	while True:
-	    attempts = attempts + 1
-	    if min_level != max_level:
-		level = randint(min_level, max_level)
-	    else:
-		level = max_level
-	    randNum = randint(0, len(AllowedSpells[level]) - 1)
-	    newScroll = AllowedSpells[level][randNum]
-	    if newScroll not in scrolls:
-		break
-	    elif attempts > 100:
-		# TESTING STATEMENT
-		scrolls.append(["Exceeded maximum attempts for this item", str(attempts)])
-		break
-	scrolls.append(newScroll)
-
+        attempts = 0
+        while True:
+            attempts += 1
+            if min_level != max_level:
+                level = randint(min_level, max_level)
+            else:
+                level = max_level
+            randNum = randint(0, len(AllowedSpells[level]) - 1)
+            newScroll = AllowedSpells[level][randNum]
+            if newScroll not in scrolls:
+                break
+            elif attempts > 100:
+                scrolls.append(["Exceeded maximum attempts for this item", str(attempts)])
+                break
+        scrolls.append(newScroll)
     return scrolls
 
 def getPoisons(requested_type, num_poisons=1):
