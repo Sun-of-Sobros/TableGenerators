@@ -745,7 +745,7 @@ def getInputOrDefault(prompt="Enter input: ", stored_value="DEFAULT", code_for_d
 
 
 def main():
-    TABLE_TITLES_DEFAULTS = ["Poisons", "Tattoos"]
+    TABLE_TITLES_DEFAULTS = ["**Poisons**", "**Tattoos**"]
     NUM_TABLES_DEFAULT = 1
     DELIMITER_STRING = 'ENDTABLE'
     IsCustomTables = True
